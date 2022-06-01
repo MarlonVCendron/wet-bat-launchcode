@@ -2,24 +2,14 @@ import React from 'react';
 import {
   Box,
   useColorModeValue,
-  Drawer,
-  DrawerContent,
-  DrawerOverlay,
-  DrawerBody,
-  DrawerFooter,
   Divider,
   Text,
 } from '@chakra-ui/react';
 
 import items from './items';
 import NavItem from './NavItem';
-import {Collapse} from '@mui/material';
 
-interface SideBarProps {
-  isOpen: boolean;
-}
-
-const SideBar : React.FC<SideBarProps> = ({ isOpen }) => {
+const SideBar : React.FC = () => {
   return (
     <Box
       as='nav'
