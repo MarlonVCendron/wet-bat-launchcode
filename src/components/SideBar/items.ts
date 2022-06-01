@@ -9,17 +9,17 @@ import {
   Settings,
   Support,
 } from '@mui/icons-material';
-import {SvgIconTypeMap} from '@mui/material';
-import {OverridableComponent} from '@mui/material/OverridableComponent';
+import { SvgIconTypeMap } from '@mui/material';
+import { OverridableComponent } from '@mui/material/OverridableComponent';
 
 interface itemsLayout {
-    text: string,
-    icon: OverridableComponent<SvgIconTypeMap>,
-    href: string,
-    divider: boolean,
+  text: string;
+  icon: OverridableComponent<SvgIconTypeMap>;
+  href: string;
+  divider: boolean;
 }
 
-const items : itemsLayout[] = [
+const items: itemsLayout[] = [
   {
     text: 'Home',
     icon: Home,

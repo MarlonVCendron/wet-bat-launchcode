@@ -1,22 +1,21 @@
 import React from 'react';
-import {
-  Flex,
-  Icon,
-  Link,
-  Text,
-} from '@chakra-ui/react';
-import {SvgIconTypeMap} from '@mui/material';
-import {OverridableComponent} from '@mui/material/OverridableComponent';
+import { Flex, Icon, Link, Text } from '@chakra-ui/react';
+import { SvgIconTypeMap } from '@mui/material';
+import { OverridableComponent } from '@mui/material/OverridableComponent';
 
 interface NavItemProps {
   href: string;
-  icon: OverridableComponent<SvgIconTypeMap>,
+  icon: OverridableComponent<SvgIconTypeMap>;
   children: React.ReactNode;
 }
 
-const NavItem : React.FC<NavItemProps> = ({ href, icon, children }) => {
+const NavItem: React.FC<NavItemProps> = ({ href, icon, children }) => {
   return (
-    <Link href={href} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <Link
+      href={href}
+      style={{ textDecoration: 'none' }}
+      _focus={{ boxShadow: 'none' }}
+    >
       <Flex
         align="center"
         px="2"
@@ -27,12 +26,7 @@ const NavItem : React.FC<NavItemProps> = ({ href, icon, children }) => {
         }}
         transition="background-color 200ms linear"
       >
-        <Icon
-          mx="4"
-          fontSize="24"
-          color="primary"
-          as={icon}
-        />
+        <Icon mx="4" fontSize="24" color="primary" as={icon} />
 
         <Text color="primary" fontWeight="bold">
           {children}

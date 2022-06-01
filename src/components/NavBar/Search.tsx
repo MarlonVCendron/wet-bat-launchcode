@@ -2,15 +2,15 @@ import React from 'react';
 import { Center, Flex, Icon, Input } from '@chakra-ui/react';
 import SearchIcon from '@mui/icons-material/Search';
 
-const Search : React.FC = () => {
-  const [query, setQuery] = React.useState('')
+const Search: React.FC = () => {
+  const [query, setQuery] = React.useState('');
   const height = '32px';
 
   return (
-    <Flex pos='relative' align='stretch'>
+    <Flex pos="relative" align="stretch">
       <Input
-        autoCorrect='off'
-        spellCheck='false'
+        autoCorrect="off"
+        spellCheck="false"
         sx={{
           w: '100%',
           pl: height,
@@ -24,16 +24,11 @@ const Search : React.FC = () => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <Center pos='absolute' left={3} h={height} zIndex={1}>
-        <Icon
-          w={6}
-          h={6}
-          color="gray.500"
-          as={SearchIcon}
-        />
+      <Center pos="absolute" left={3} h={height} zIndex={1}>
+        <Icon w={6} h={6} color="gray.500" as={SearchIcon} />
       </Center>
     </Flex>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;

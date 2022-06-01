@@ -1,24 +1,19 @@
 import React from 'react';
-import {
-  Box,
-  useColorModeValue,
-  Divider,
-  Text,
-} from '@chakra-ui/react';
+import { Box, useColorModeValue, Divider, Text } from '@chakra-ui/react';
 
 import items from './items';
 import NavItem from './NavItem';
 
-const SideBar : React.FC = () => {
+const SideBar: React.FC = () => {
   return (
     <Box
-      as='nav'
-      pos='sticky'
+      as="nav"
+      pos="sticky"
       bg={useColorModeValue('bg.200', 'gray.700')}
-      overscrollBehavior='contain'
-      top='6.5rem'
-      w='200px'
-      h='100vh'
+      overscrollBehavior="contain"
+      top="6.5rem"
+      w="200px"
+      h="100vh"
       flexShrink={0}
     >
       {items.map((item) => (
@@ -27,9 +22,7 @@ const SideBar : React.FC = () => {
             {item.text}
           </NavItem>
 
-          { item.divider &&
-            <Divider />
-          }
+          {item.divider && <Divider />}
         </React.Fragment>
       ))}
 
@@ -39,8 +32,6 @@ const SideBar : React.FC = () => {
         All rights reserved by Wet Bat 2022 ©
       </Text>
     </Box>
-
-
   );
 
   //  return (
@@ -84,6 +75,6 @@ const SideBar : React.FC = () => {
   //        </Drawer>
   //    </Box>
   //  );
-}
+};
 
 export default SideBar;
