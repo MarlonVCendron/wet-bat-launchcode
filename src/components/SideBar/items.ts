@@ -1,69 +1,77 @@
+import {
+  Home,
+  AttachMoney,
+  ListAlt,
+  Telegram,
+  InsertDriveFile,
+  Timeline,
+  Group,
+  Settings,
+  Support,
+} from '@mui/icons-material';
+import {SvgIconTypeMap} from '@mui/material';
+import {OverridableComponent} from '@mui/material/OverridableComponent';
+
 interface itemsLayout {
-    text: string | null,
-    icon: string | null,
-    route: string | null,
+    text: string,
+    icon: OverridableComponent<SvgIconTypeMap>,
+    href: string,
     divider: boolean,
 }
 
 const items : itemsLayout[] = [
   {
     text: 'Home',
-    icon: 'home',
-    route: '/',
+    icon: Home,
+    href: '/',
     divider: false,
   },
   {
     text: 'Quotes',
-    icon: 'attach_money',
-    route: '/',
+    icon: AttachMoney,
+    href: '/',
     divider: false,
   },
   {
     text: 'Leads',
-    icon: 'show_chart',
-    route: '/',
+    icon: ListAlt,
+    href: '/',
     divider: false,
   },
   {
     text: 'Tours',
-    icon: 'send',
-    route: '/',
-    divider: false,
-  },
-  {
-    text: null,
-    icon: null,
-    route: null,
+    icon: Telegram,
+    href: '/',
     divider: true,
   },
   {
     text: 'Invoices',
-    icon: 'insert_drive_file',
-    route: '/',
+    icon: InsertDriveFile,
+    href: '/',
     divider: false,
   },
   {
     text: 'Analytics',
-    icon: 'timeline',
-    route: '/',
+    icon: Timeline,
+    href: '/',
     divider: false,
   },
   {
     text: 'Team',
-    icon: 'group',
-    route: '/',
+    icon: Group,
+    href: '/',
     divider: false,
   },
   {
     text: 'Admin',
-    icon: 'settings',
-    route: '/',
+    icon: Settings,
+    href: '/',
     divider: false,
   },
   {
     text: 'Support',
-    icon: 'support',
-    route: '/',
+    icon: Support,
+    href: '/',
     divider: false,
   },
 ];
