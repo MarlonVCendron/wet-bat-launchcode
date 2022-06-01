@@ -1,20 +1,24 @@
 import React from 'react';
-import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import InputBase from '@mui/material/InputBase';
-import Badge from '@mui/material/Badge';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import ChatIcon from '@mui/icons-material/Chat';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import MoreIcon from '@mui/icons-material/MoreVert';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import SettingsIcon from '@mui/icons-material/Settings';
+import { styled } from '@mui/material/styles';
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  InputBase,
+  Badge,
+  MenuItem,
+  Menu,
+} from '@mui/material';
+import {
+  Search as SearchIcon,
+  AccountCircle as AccountCircleIcon,
+  Chat as ChatIcon,
+  Notifications as NotificationsIcon,
+  More as MoreIcon,
+  Dashboard as DashboardIcon,
+  Settings as SettingsIcon,
+} from '@mui/icons-material';
 import { grey } from '@mui/material/colors';
 
 import { default as BigLogo }  from '../../images/wet-bat-white.svg';
@@ -23,7 +27,7 @@ import { default as SmallLogo }  from '../../images/logo-white.svg';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: theme.palette.common.white,
+  backgroundColor: grey[50],
   marginRight: theme.spacing(2),
   marginLeft: 0,
   width: '100%',
@@ -57,10 +61,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const NavBar : React.FC = () => {
+interface NavBarProps {
+  toggleSideBar: () => void;
+}
+
+const NavBar : React.FC<NavBarProps> = ({ toggleSideBar }) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
-    React.useState<null | HTMLElement>(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -157,7 +164,7 @@ const NavBar : React.FC = () => {
           aria-haspopup="true"
           color="inherit"
         >
-          <AccountCircle />
+          <AccountCircleIcon />
         </IconButton>
         <p>Profile</p>
       </MenuItem>
@@ -166,9 +173,10 @@ const NavBar : React.FC = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="relative" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar>
           <IconButton
+            onClick={toggleSideBar}
             size="large"
             edge="start"
             color="inherit"
@@ -245,7 +253,7 @@ const NavBar : React.FC = () => {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              <AccountCircleIcon />
             </IconButton>
           </Box>
 

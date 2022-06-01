@@ -8,9 +8,6 @@ declare module '@mui/material/styles' {
       },
       secondary: {
         main: string,
-      },
-      common: {
-        white: string,
       }
     }
   }
@@ -23,9 +20,6 @@ export default createTheme({
     },
     secondary: {
       main: "#5bbfba"
-    },
-    common: {
-      white: '#edf0f9'
     }
   },
 });
