@@ -15,8 +15,7 @@ import {
 } from '@chakra-ui/react';
 
 import Card from './Card';
-import profilePicMarlon from '../../images/profile_marlon.jpg';
-import profilePicArthur from '../../images/profile1.jpg';
+import profilePicMarlon from '../../../images/profile_marlon.jpg';
 
 interface chatType {
   profilePic: string;
@@ -31,12 +30,6 @@ const chatsList: chatType[] = [
     name: 'Marlon Cendron',
     message: 'Hii! Please hire me!',
     status: 'online',
-  },
-  {
-    profilePic: profilePicArthur,
-    name: 'Arthur',
-    message: 'Poggers!',
-    status: 'away',
   },
   {
     profilePic: 'https://bit.ly/dan-abramov',

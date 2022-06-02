@@ -2,14 +2,16 @@ import React from 'react';
 import { Grid, GridItem } from '@chakra-ui/react';
 
 import Welcome from './Welcome';
-import QuickQuote from './QuickQuote';
-import PendingQuotes from './PendingQuotes';
-import NewLeads from './NewLeads';
-import Destinations from './Destinations';
-import TeamChat from './TeamChat';
-import Revenue from './Revenue';
-import PotentialRevenue from './PotentialRevenue';
-import CloseRatios from './CloseRatios';
+import {
+  CloseRatios,
+  Destinations,
+  NewLeads,
+  PendingQuotes,
+  PotentialRevenue,
+  QuickQuote,
+  Revenue,
+  TeamChat,
+} from './Cards';
 
 const Dashboard: React.FC = () => {
   return (
