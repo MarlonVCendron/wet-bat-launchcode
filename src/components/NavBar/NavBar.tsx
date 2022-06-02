@@ -29,7 +29,7 @@ const NavBar: React.FC = () => {
       <Box mx="auto">
         <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
           <Flex align="center">
-            <Link href="/">
+            <Link href="/" _focus={{ boxShadow: 'none' }}>
               <Image m={2} src={BigLogo} alt="Wet Bat Travel" />
             </Link>
           </Flex>

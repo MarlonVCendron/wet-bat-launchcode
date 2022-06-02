@@ -8,6 +8,40 @@ export default extendTheme({
         borderColor: 'gray.300',
       },
     },
+    FormLabel: {
+      baseStyle: {
+        m: 0,
+        p: 4,
+        pb: 0,
+        textTransform: 'uppercase',
+        color: 'gray.400',
+        fontSize: 14,
+      },
+    },
+    Input: {
+      variants: {
+        dashboard: {
+          field: {
+            border: 'none',
+            bg: 'inherit',
+            fontSize: 18,
+            color: 'brand.200',
+          },
+        },
+      },
+    },
+    Select: {
+      variants: {
+        dashboard: {
+          field: {
+            border: 'none',
+            bg: 'inherit',
+            fontSize: 18,
+            color: 'brand.200',
+          },
+        },
+      },
+    },
   },
   colors: {
     brand: {
@@ -23,6 +57,7 @@ export default extendTheme({
       100: '#edf0f9',
       200: '#e6e6e6',
       300: '#ccd0dc',
+      400: '#efeff7',
     },
   },
 });

@@ -26,7 +26,7 @@ const NavItem: React.FC<NavItemProps> = ({ href, icon, children }) => {
         }}
         transition="background-color 200ms linear"
       >
-        <Icon mx="4" fontSize="24" color="primary" as={icon} />
+        <Icon mx="4" fontSize="24" color="brand.200" as={icon} />
 
         <Text color="primary" fontWeight="bold">
           {children}
