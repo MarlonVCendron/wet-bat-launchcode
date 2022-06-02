@@ -42,12 +42,12 @@ const PotentialRevenue: React.FC = () => {
     <Card title="Potential revenue" icon={PieChartIcon}>
       <Flex>
         {[1, 2, 3].map((i) => (
-          <ResponsiveContainer key={i} height={300} width="100%">
+          <ResponsiveContainer key={i} height={300}>
             <PieChart>
               <Tooltip />
               <Pie data={data} dataKey="value" nameKey="name" outerRadius={90}>
-                {data.map((entry, index) => (
-                  <Cell fill={COLORS[index % COLORS.length]} />
+                {data.map((_, index) => (
+                  <Cell key={index} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
             </PieChart>
