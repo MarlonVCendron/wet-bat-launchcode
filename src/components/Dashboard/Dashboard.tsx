@@ -2,6 +2,8 @@ import React from 'react';
 import { Box, Grid, GridItem } from '@chakra-ui/react';
 
 import Welcome from './Welcome';
+import QuickQuote from './QuickQuote';
+import PendingQuotes from './PendingQuotes';
 
 const Dashboard: React.FC = () => {
   return (
@@ -16,10 +18,10 @@ const Dashboard: React.FC = () => {
         <Welcome />
       </GridItem>
       <GridItem rowSpan={1} colSpan={2}>
-        <Box borderRadius={12} w="full" h="300px" bg="gray.300" />
+        <QuickQuote />
       </GridItem>
       <GridItem rowSpan={1} colSpan={2}>
-        <Box borderRadius={12} w="full" h="300px" bg="gray.300" />
+        <PendingQuotes />
       </GridItem>
       <GridItem rowSpan={1} colSpan={1}>
         <Box borderRadius={12} w="full" h="300px" bg="gray.300" />
