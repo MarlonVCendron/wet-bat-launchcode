@@ -33,13 +33,13 @@ const chatsList: chatType[] = [
   },
   {
     profilePic: 'https://bit.ly/dan-abramov',
-    name: 'Jane Smith',
+    name: 'Random Person',
     message: 'Hey! I want to place my package',
     status: 'offline',
   },
   {
     profilePic: 'https://bit.ly/dan-abramov',
-    name: 'Jane Smith',
+    name: 'Random Person',
     message: 'Hey! I want to place my package',
     status: 'away',
   },
