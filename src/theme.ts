@@ -16,6 +16,7 @@ export default extendTheme({
       300: '#e7f0c3',
       400: '#f0cf85',
       500: '#a4d4ae',
+      600: '#4264c9',
     },
     primary: '#5f6caf',
     bg: {
