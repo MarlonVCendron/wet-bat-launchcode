@@ -10,6 +10,7 @@ import {
 } from 'recharts';
 
 import Card from './Card';
+import { useToken } from '@chakra-ui/react';
 
 const data = [
   {
@@ -61,6 +62,8 @@ const data = [
 ];
 
 const Revenue: React.FC = () => {
+  const [brand100, brand200] = useToken('colors', ['brand.100', 'brand.200']);
+
   return (
     <Card title="Revenue" icon={SignalCellularAltIcon}>
       <ResponsiveContainer height={300} width="100%">
@@ -75,13 +78,13 @@ const Revenue: React.FC = () => {
           <Tooltip />
           <Line
             dataKey="line1"
-            stroke="#5f6caf"
+            stroke={brand100}
             strokeWidth={6}
             activeDot={{ r: 10 }}
           />
           <Line
             dataKey="line2"
-            stroke="#5bbfba"
+            stroke={brand200}
             strokeWidth={6}
             activeDot={{ r: 10 }}
           />

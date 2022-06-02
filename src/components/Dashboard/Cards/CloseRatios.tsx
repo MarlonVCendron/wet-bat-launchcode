@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Heading, Image } from '@chakra-ui/react';
+import { Flex, Heading, Image, useToken } from '@chakra-ui/react';
 import { Pie, PieChart, Tooltip, Cell, ResponsiveContainer } from 'recharts';
 import { Handshake as HandshakeIcon } from '@mui/icons-material';
 
@@ -17,9 +17,8 @@ const data = [
   },
 ];
 
-const COLORS = ['#5bbfba', '#f67473'];
-
 const CloseRatios: React.FC = () => {
+  const brandColors = useToken('colors', ['brand.100', 'brand.400']);
   return (
     <Card title="Close ratios" icon={HandshakeIcon}>
       <Flex position="relative">
@@ -46,7 +45,10 @@ const CloseRatios: React.FC = () => {
               outerRadius={90}
             >
               {data.map((_, index) => (
-                <Cell key={index} fill={COLORS[index % COLORS.length]} />
+                <Cell
+                  key={index}
+                  fill={brandColors[index % brandColors.length]}
+                />
               ))}
             </Pie>
           </PieChart>

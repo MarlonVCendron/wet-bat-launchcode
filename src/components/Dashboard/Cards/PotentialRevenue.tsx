@@ -3,7 +3,7 @@ import { PieChart as PieChartIcon } from '@mui/icons-material';
 import { Pie, PieChart, Tooltip, Cell, ResponsiveContainer } from 'recharts';
 
 import Card from './Card';
-import { Flex } from '@chakra-ui/react';
+import { Flex, useToken } from '@chakra-ui/react';
 
 const data = [
   {
@@ -28,16 +28,16 @@ const data = [
   },
 ];
 
-const COLORS = [
-  '#5bbfba',
-  '#5f6caf',
-  '#e7f0c3',
-  '#f0cf85',
-  '#a4d4ae',
-  '#4264c9',
-];
-
 const PotentialRevenue: React.FC = () => {
+  const brandColors = useToken('colors', [
+    'brand.100',
+    'brand.200',
+    'brand.300',
+    'brand.400',
+    'brand.500',
+    'brand.600',
+  ]);
+
   return (
     <Card title="Potential revenue" icon={PieChartIcon}>
       <Flex>
@@ -47,7 +47,10 @@ const PotentialRevenue: React.FC = () => {
               <Tooltip />
               <Pie data={data} dataKey="value" nameKey="name" outerRadius={90}>
                 {data.map((_, index) => (
-                  <Cell key={index} fill={COLORS[index % COLORS.length]} />
+                  <Cell
+                    key={index}
+                    fill={brandColors[index % brandColors.length]}
+                  />
                 ))}
               </Pie>
             </PieChart>

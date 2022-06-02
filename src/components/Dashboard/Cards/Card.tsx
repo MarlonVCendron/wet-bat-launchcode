@@ -7,11 +7,12 @@ import { OverridableComponent } from '@mui/material/OverridableComponent';
 interface CardProps {
   title: string;
   maxH?: string;
+  p?: number;
   icon: OverridableComponent<SvgIconTypeMap>;
   children?: React.ReactNode;
 }
 
-const Card: React.FC<CardProps> = ({ title, icon, maxH, children }) => {
+const Card: React.FC<CardProps> = ({ title, icon, maxH, p, children }) => {
   return (
     <Box
       borderRadius={12}
@@ -30,7 +31,7 @@ const Card: React.FC<CardProps> = ({ title, icon, maxH, children }) => {
         <Icon fontSize="32" color="gray.300" as={OpenWithIcon} />
       </Flex>
       <Divider />
-      <Box p={4} maxH={maxH || 'initial'} overflowY="auto">
+      <Box p={p != null ? p : 4} maxH={maxH || 'initial'} overflowY="auto">
         {children}
       </Box>
     </Box>
