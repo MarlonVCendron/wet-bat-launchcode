@@ -88,7 +88,7 @@ const TeamChat: React.FC = () => {
             </Box>
             <Spacer />
             <Link
-              style={{ textDecoration: 'none' }}
+              style={{ lineHeight: 0, textDecoration: 'none' }}
               _focus={{ boxShadow: 'none' }}
             >
               <Icon w="8" h="8" color="brand.100" as={MessageIcon} />
