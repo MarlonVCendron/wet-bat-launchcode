@@ -1,23 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box, Flex, HStack, Image, Link } from '@chakra-ui/react';
 import {
   ChatBubble as ChatBubbleIcon,
   Notifications as NotificationsIcon,
   Settings as SettingsIcon,
+  Dashboard as DashboardIcon,
 } from '@mui/icons-material';
 
 //import { MobileNavButton, MobileNavContent } from './mobile-nav'
 
+import { RootContext } from '../../store/useStore';
 import NavIcon from './NavIcon';
 import Search from './Search';
 import { default as BigLogo } from '../../images/wet-bat-white.svg';
-//import { default as SmallLogo }  from '../../images/logo-white.svg';
+import { default as SmallLogo } from '../../images/logo-white.svg';
 
 interface NavBarProps {
   height: number;
 }
 
 const NavBar: React.FC<NavBarProps> = ({ height }) => {
+  const { sideBarStore } = useContext(RootContext);
+
   return (
     <Box
       as="header"
@@ -32,9 +36,28 @@ const NavBar: React.FC<NavBarProps> = ({ height }) => {
       height={height}
     >
       <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
+        <NavIcon
+          aria_label="Sidebar"
+          icon={DashboardIcon}
+          onClick={sideBarStore.toggle}
+          size="10"
+        />
+
         <Flex align="center">
           <Link href="/" _focus={{ boxShadow: 'none' }}>
-            <Image m={2} src={BigLogo} alt="Wet Bat Travel" />
+            <Image
+              mx={4}
+              src={BigLogo}
+              alt="Wet Bat Travel"
+              sx={{
+                '@media screen and (min-width: 0em)': {
+                  content: `url(${SmallLogo})`,
+                },
+                '@media screen and (min-width: 30em)': {
+                  content: `url(${BigLogo})`,
+                },
+              }}
+            />
           </Link>
         </Flex>
 

@@ -17,7 +17,13 @@ const Destinations: React.FC = () => {
       p={0}
       threeDots
     >
-      <Flex h={height + 8 * padding}>
+      <Flex
+        h={{
+          base: 2 * height + 8 * padding,
+          md: height + 8 * padding,
+        }}
+        direction={{ base: 'column', md: 'row' }}
+      >
         <Box p={padding}>
           <Chart height={height} />
         </Box>

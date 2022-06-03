@@ -40,7 +40,7 @@ const PotentialRevenue: React.FC = () => {
 
   return (
     <Card title="Potential revenue" icon={PieChartIcon} threeDots>
-      <Flex>
+      <Flex direction={{ base: 'column', md: 'row' }}>
         {[1, 2, 3].map((i) => (
           <ResponsiveContainer key={i} height={300}>
             <PieChart>

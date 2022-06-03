@@ -12,19 +12,20 @@ const Search: React.FC = () => {
         autoCorrect="off"
         spellCheck="false"
         sx={{
-          w: '100%',
-          pl: height,
-          h: height,
-          fontWeight: 'medium',
-          color: 'gray.500',
           outline: 0,
-          bg: 'white',
           '.chakra-ui-dark &': { bg: 'gray.700' },
         }}
+        bg="white"
+        w="100%"
+        pl={height}
+        h={height}
+        ml="8"
+        fontWeight="medium"
+        color="gray.500"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <Center pos="absolute" left={3} h={height} zIndex={1}>
+      <Center pos="absolute" left={10} h={height} zIndex={1}>
         <Icon w={6} h={6} color="gray.500" as={SearchIcon} />
       </Center>
     </Flex>

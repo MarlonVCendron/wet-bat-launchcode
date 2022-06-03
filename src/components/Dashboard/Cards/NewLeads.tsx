@@ -31,36 +31,6 @@ const newLeadsList: newLeadType[] = [
     message: 'Hey! I want to place my package',
     time: '13:40 PM',
   },
-  {
-    profilePic: 'https://bit.ly/dan-abramov',
-    name: 'Random Person',
-    message: 'Hey! I want to place my package',
-    time: '13:40 PM',
-  },
-  {
-    profilePic: 'https://bit.ly/dan-abramov',
-    name: 'Random Person',
-    message: 'Hey! I want to place my package',
-    time: '13:40 PM',
-  },
-  {
-    profilePic: 'https://bit.ly/dan-abramov',
-    name: 'Random Person',
-    message: 'Hey! I want to place my package',
-    time: '13:40 PM',
-  },
-  {
-    profilePic: 'https://bit.ly/dan-abramov',
-    name: 'Random Person',
-    message: 'Hey! I want to place my package',
-    time: '13:40 PM',
-  },
-  {
-    profilePic: 'https://bit.ly/dan-abramov',
-    name: 'Random Person',
-    message: 'Hey! I want to place my package',
-    time: '13:40 PM',
-  },
 ];
 
 const NewLeads: React.FC = () => {

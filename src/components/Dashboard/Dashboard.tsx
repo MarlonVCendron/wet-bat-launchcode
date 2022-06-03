@@ -82,7 +82,7 @@ const Dashboard: React.FC = () => {
       </GridItem>
       <GridItem
         rowSpan={1}
-        colSpan={{ base: 8, '2xl': 3 }}
+        colSpan={{ base: 8, '2xl': 2 }}
         rowStart={{ base: 9, lg: 7, '2xl': 4 }}
         colStart={1}
       >

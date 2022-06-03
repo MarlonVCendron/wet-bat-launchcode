@@ -9,13 +9,12 @@ interface DefaultLayoutProps {
 }
 
 const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
-  const sideBarWidth = 200;
   const navBarHeight = 100;
   return (
     <>
       <NavBar height={navBarHeight} />
-      <SideBar width={sideBarWidth} navBarHeight={navBarHeight} />
-      <Box w="full" h="full" pl={sideBarWidth} pt={navBarHeight}>
+      <SideBar navBarHeight={navBarHeight} />
+      <Box w="100%" h="full" pt={navBarHeight}>
         {children}
       </Box>
     </>

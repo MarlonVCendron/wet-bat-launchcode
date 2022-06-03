@@ -65,10 +65,15 @@ const Welcome: React.FC = () => {
         </Flex>
         <Flex direction="column" justify="space-evenly" align="center">
           <Center>
-            <Image w="80%" src={ClipArt} />
+            <Image w={{ base: '90%', md: '70%' }} src={ClipArt} />
           </Center>
 
-          <Flex mt={6} alignItems="center" gap="4">
+          <Flex
+            mt={6}
+            alignItems="center"
+            gap="4"
+            direction={{ base: 'column', md: 'row' }}
+          >
             <Flex>
               <WelcomeNumber>101</WelcomeNumber>
               <WelcomeMetrics>
