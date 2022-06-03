@@ -15,7 +15,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
     <>
       <NavBar height={navBarHeight} />
       <SideBar width={sideBarWidth} navBarHeight={navBarHeight} />
-      <Box w="full" height="fit-content" pl={sideBarWidth} pt={navBarHeight}>
+      <Box w="full" h="full" pl={sideBarWidth} pt={navBarHeight}>
         {children}
       </Box>
     </>
