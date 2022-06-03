@@ -1,6 +1,10 @@
 import React from 'react';
 import { Box, Icon, Flex, Heading, Spacer, Divider } from '@chakra-ui/react';
-import { OpenWith as OpenWithIcon } from '@mui/icons-material';
+import {
+  OpenWith as OpenWithIcon,
+  MoreVert as MoreVertIcon,
+  Replay as ReplayIcon,
+} from '@mui/icons-material';
 import { SvgIconTypeMap } from '@mui/material';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 
@@ -9,10 +13,22 @@ interface CardProps {
   maxH?: string;
   p?: number;
   icon: OverridableComponent<SvgIconTypeMap>;
+  expand?: boolean;
+  reload?: boolean;
+  threeDots?: boolean;
   children?: React.ReactNode;
 }
 
-const Card: React.FC<CardProps> = ({ title, icon, maxH, p, children }) => {
+const Card: React.FC<CardProps> = ({
+  title,
+  icon,
+  maxH,
+  p,
+  expand,
+  reload,
+  threeDots,
+  children,
+}) => {
   return (
     <Box
       borderRadius={12}
@@ -28,7 +44,15 @@ const Card: React.FC<CardProps> = ({ title, icon, maxH, p, children }) => {
           {title}
         </Heading>
         <Spacer />
-        <Icon fontSize="32" color="gray.300" as={OpenWithIcon} />
+        {reload && (
+          <Icon ml="2" fontSize="32" color="gray.300" as={ReplayIcon} />
+        )}
+        {expand && (
+          <Icon ml="2" fontSize="32" color="gray.300" as={OpenWithIcon} />
+        )}
+        {threeDots && (
+          <Icon ml="2" fontSize="32" color="gray.300" as={MoreVertIcon} />
+        )}
       </Flex>
       <Divider />
       <Box p={p != null ? p : 4} maxH={maxH || 'initial'} overflowY="auto">

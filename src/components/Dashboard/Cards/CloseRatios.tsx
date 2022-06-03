@@ -20,7 +20,7 @@ const data = [
 const CloseRatios: React.FC = () => {
   const brandColors = useToken('colors', ['brand.100', 'brand.400']);
   return (
-    <Card title="Close ratios" icon={HandshakeIcon}>
+    <Card title="Close ratios" icon={HandshakeIcon} threeDots>
       <Flex position="relative">
         <Image
           src={ArrowIcon}

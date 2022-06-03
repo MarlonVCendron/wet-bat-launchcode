@@ -65,7 +65,7 @@ const Revenue: React.FC = () => {
   const [brand100, brand200] = useToken('colors', ['brand.100', 'brand.200']);
 
   return (
-    <Card title="Revenue" icon={SignalCellularAltIcon}>
+    <Card title="Revenue" icon={SignalCellularAltIcon} threeDots>
       <ResponsiveContainer height={300} width="100%">
         <LineChart data={data} margin={{ left: 20, right: 10, top: 10 }}>
           <CartesianGrid vertical={false} />

@@ -16,7 +16,7 @@ import {
 const Dashboard: React.FC = () => {
   return (
     <Grid
-      h="500px"
+      h="400px"
       templateRows="repeat(4, 1fr)"
       templateColumns="repeat(8, 1fr)"
       gap={5}

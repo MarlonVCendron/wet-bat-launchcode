@@ -23,7 +23,7 @@ const QuickQuote: React.FC = () => {
   const [departureDate, setDepartureDate] = useState(new Date());
 
   return (
-    <Card title="Quick quote" icon={FastForwardIcon}>
+    <Card title="Quick quote" icon={FastForwardIcon} expand>
       <FormControl>
         <Grid
           templateRows="repeat(4, 1fr)"

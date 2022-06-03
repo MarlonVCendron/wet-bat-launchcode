@@ -1,25 +1,17 @@
 import React from 'react';
-import { ChakraProvider, Box } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 
-import NavBar from './components/NavBar';
-import SideBar from './components/SideBar';
 import theme from './theme';
-import Dashboard from './components/Dashboard';
+import Home from './views/Home';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <ChakraProvider theme={theme}>
-        <NavBar />
-        <Box as="main" w="full">
-          <Box display={{ md: 'flex' }}>
-            <SideBar />
-            <Dashboard />
-          </Box>
-        </Box>
+        <Home />
       </ChakraProvider>
     </div>
   );
-}
+};
 
 export default App;

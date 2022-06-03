@@ -4,16 +4,22 @@ import { Box, useColorModeValue, Divider, Text } from '@chakra-ui/react';
 import items from './items';
 import NavItem from './NavItem';
 
-const SideBar: React.FC = () => {
+interface SideBarProps {
+  width: number;
+  navBarHeight: number;
+}
+
+const SideBar: React.FC<SideBarProps> = ({ width, navBarHeight }) => {
   return (
     <Box
       as="nav"
-      pos="sticky"
+      pos="fixed"
       bg={useColorModeValue('bg.200', 'gray.700')}
       overscrollBehavior="contain"
-      top="6.5rem"
-      w="200px"
-      h="100vh"
+      top={navBarHeight}
+      left="0"
+      h={`calc(100vh - ${navBarHeight}px)`}
+      width={width}
       flexShrink={0}
     >
       {items.map((item) => (

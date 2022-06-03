@@ -11,7 +11,12 @@ const Destinations: React.FC = () => {
   const padding = 4;
 
   return (
-    <Card title="New leads" icon={TelegramIcon} p={0}>
+    <Card
+      title="Popular destinations & packages"
+      icon={TelegramIcon}
+      p={0}
+      threeDots
+    >
       <Flex h={height + 8 * padding}>
         <Box p={padding}>
           <Chart height={height} />

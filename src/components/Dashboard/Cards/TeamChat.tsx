@@ -53,7 +53,7 @@ const statusColor = {
 
 const TeamChat: React.FC = () => {
   return (
-    <Card title="Team chat" icon={MailOutlineIcon}>
+    <Card title="Team chat" icon={MailOutlineIcon} threeDots>
       {chatsList.map((chat) => (
         <Link
           href="/"

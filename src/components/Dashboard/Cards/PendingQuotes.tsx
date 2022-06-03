@@ -14,7 +14,7 @@ import Card from './Card';
 
 const PendingQuotes: React.FC = () => {
   return (
-    <Card title="Pending quotes" icon={HistoryIcon}>
+    <Card title="Pending quotes" icon={HistoryIcon} reload expand>
       <TableContainer>
         <Table variant="simple">
           <Thead>

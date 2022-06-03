@@ -39,7 +39,7 @@ const PotentialRevenue: React.FC = () => {
   ]);
 
   return (
-    <Card title="Potential revenue" icon={PieChartIcon}>
+    <Card title="Potential revenue" icon={PieChartIcon} threeDots>
       <Flex>
         {[1, 2, 3].map((i) => (
           <ResponsiveContainer key={i} height={300}>

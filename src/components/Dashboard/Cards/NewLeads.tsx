@@ -53,7 +53,7 @@ const newLeadsList: newLeadType[] = [
 
 const NewLeads: React.FC = () => {
   return (
-    <Card title="New leads" icon={MailOutlineIcon} maxH="400px">
+    <Card title="New leads" icon={MailOutlineIcon} maxH="400px" reload expand>
       {newLeadsList.map((lead) => (
         <Link
           href="/"

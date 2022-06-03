@@ -13,46 +13,49 @@ import Search from './Search';
 import { default as BigLogo } from '../../images/wet-bat-white.svg';
 //import { default as SmallLogo }  from '../../images/logo-white.svg';
 
-const NavBar: React.FC = () => {
+interface NavBarProps {
+  height: number;
+}
+
+const NavBar: React.FC<NavBarProps> = ({ height }) => {
   return (
     <Box
       as="header"
       transition="box-shadow 0.2s, background-color 0.2s"
-      pos="sticky"
+      pos="fixed"
       top="0"
-      zIndex="3"
+      zIndex="2000"
       bg="primary"
       left="0"
       right="0"
       width="full"
+      height={height}
     >
-      <Box mx="auto">
-        <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
-          <Flex align="center">
-            <Link href="/" _focus={{ boxShadow: 'none' }}>
-              <Image m={2} src={BigLogo} alt="Wet Bat Travel" />
-            </Link>
-          </Flex>
+      <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
+        <Flex align="center">
+          <Link href="/" _focus={{ boxShadow: 'none' }}>
+            <Image m={2} src={BigLogo} alt="Wet Bat Travel" />
+          </Link>
+        </Flex>
 
-          <Flex justify="flex-end" w="100%" align="center">
-            <Search />
+        <Flex justify="flex-end" w="100%" align="center">
+          <Search />
 
-            <HStack spacing="5" ml={5} display={{ base: 'none', md: 'flex' }}>
-              <NavIcon aria_label="Notifications" icon={NotificationsIcon} />
-              <NavIcon aria_label="Messages" icon={ChatBubbleIcon} />
-              <NavIcon aria_label="Settings" icon={SettingsIcon} />
-            </HStack>
-            {/*<HStack spacing='5'>
+          <HStack spacing="5" ml={5} display={{ base: 'none', md: 'flex' }}>
+            <NavIcon aria_label="Notifications" icon={NotificationsIcon} />
+            <NavIcon aria_label="Messages" icon={ChatBubbleIcon} />
+            <NavIcon aria_label="Settings" icon={SettingsIcon} />
+          </HStack>
+          {/*<HStack spacing='5'>
             <MobileNavButton
               ref={mobileNavBtnRef}
               aria-label='Open Menu'
               onClick={mobileNav.onOpen}
             />
           </HStack>*/}
-          </Flex>
         </Flex>
-        {/*<MobileNavContent isOpen={mobileNav.isOpen} onClose={mobileNav.onClose} />*/}
-      </Box>
+      </Flex>
+      {/*<MobileNavContent isOpen={mobileNav.isOpen} onClose={mobileNav.onClose} />*/}
     </Box>
   );
 };
