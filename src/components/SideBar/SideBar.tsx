@@ -18,9 +18,10 @@ const SideBar: React.FC<SideBarProps> = ({ width, navBarHeight }) => {
       overscrollBehavior="contain"
       top={navBarHeight}
       left="0"
-      h={`calc(100vh - ${navBarHeight}px)`}
+      h={`calc(100% - ${navBarHeight}px)`}
       width={width}
       flexShrink={0}
+      zIndex={1000}
     >
       {items.map((item) => (
         <React.Fragment key={item.text}>

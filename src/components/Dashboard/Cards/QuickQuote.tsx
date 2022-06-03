@@ -27,8 +27,9 @@ const QuickQuote: React.FC = () => {
       <FormControl>
         <Grid
           templateRows="repeat(4, 1fr)"
-          templateColumns="repeat(2, 1fr)"
+          templateColumns="repeat(2, minmax(0, 1fr))"
           gap={4}
+          width="full"
         >
           <GridItem rowSpan={1} colSpan={1}>
             <Box bg="bg.400">

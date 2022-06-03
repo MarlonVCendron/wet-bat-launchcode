@@ -54,8 +54,9 @@ const statusColor = {
 const TeamChat: React.FC = () => {
   return (
     <Card title="Team chat" icon={MailOutlineIcon} threeDots>
-      {chatsList.map((chat) => (
+      {chatsList.map((chat, index) => (
         <Link
+          key={index}
           href="/"
           role="group"
           style={{ textDecoration: 'none' }}
@@ -87,12 +88,7 @@ const TeamChat: React.FC = () => {
               </Text>
             </Box>
             <Spacer />
-            <Link
-              style={{ lineHeight: 0, textDecoration: 'none' }}
-              _focus={{ boxShadow: 'none' }}
-            >
-              <Icon w="8" h="8" color="brand.100" as={MessageIcon} />
-            </Link>
+            <Icon w="8" h="8" color="brand.100" as={MessageIcon} />
           </Flex>
         </Link>
       ))}

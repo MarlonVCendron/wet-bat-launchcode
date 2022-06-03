@@ -16,6 +16,10 @@ export default extendTheme({
         textTransform: 'uppercase',
         color: 'gray.400',
         fontSize: 14,
+        maxWidth: '100%',
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis',
+        overflow: 'hidden',
       },
     },
     Input: {

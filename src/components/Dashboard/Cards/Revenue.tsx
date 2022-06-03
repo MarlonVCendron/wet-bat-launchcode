@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { SignalCellularAlt as SignalCellularAltIcon } from '@mui/icons-material';
 import {
   CartesianGrid,
@@ -8,9 +8,10 @@ import {
   XAxis,
   ResponsiveContainer,
 } from 'recharts';
-
-import Card from './Card';
 import { useToken } from '@chakra-ui/react';
+
+import useForceUpdate from '../../../utils/useForceUpdate';
+import Card from './Card';
 
 const data = [
   {
@@ -63,6 +64,16 @@ const data = [
 
 const Revenue: React.FC = () => {
   const [brand100, brand200] = useToken('colors', ['brand.100', 'brand.200']);
+  const [state, setState] = useState(1);
+
+  const forceUpdate = useForceUpdate();
+  useEffect(() => {
+    window.onresize = () => {
+      console.log('a');
+      //forceUpdate;
+      setState(state + 1);
+    };
+  }, []);
 
   return (
     <Card title="Revenue" icon={SignalCellularAltIcon} threeDots>

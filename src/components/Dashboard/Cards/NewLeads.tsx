@@ -49,13 +49,26 @@ const newLeadsList: newLeadType[] = [
     message: 'Hey! I want to place my package',
     time: '13:40 PM',
   },
+  {
+    profilePic: 'https://bit.ly/dan-abramov',
+    name: 'Random Person',
+    message: 'Hey! I want to place my package',
+    time: '13:40 PM',
+  },
+  {
+    profilePic: 'https://bit.ly/dan-abramov',
+    name: 'Random Person',
+    message: 'Hey! I want to place my package',
+    time: '13:40 PM',
+  },
 ];
 
 const NewLeads: React.FC = () => {
   return (
-    <Card title="New leads" icon={MailOutlineIcon} maxH="400px" reload expand>
-      {newLeadsList.map((lead) => (
+    <Card title="New leads" icon={MailOutlineIcon} reload expand>
+      {newLeadsList.map((lead, index) => (
         <Link
+          key={index}
           href="/"
           role="group"
           style={{ textDecoration: 'none' }}

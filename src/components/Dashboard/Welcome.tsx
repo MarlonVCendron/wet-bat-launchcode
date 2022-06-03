@@ -43,8 +43,12 @@ const Welcome: React.FC = () => {
       w="full"
       h="full"
     >
-      <Flex justify="space-around">
-        <Flex w="40%" direction="column" justify="center">
+      <Flex justify="space-around" direction={{ base: 'column', '2xl': 'row' }}>
+        <Flex
+          w={{ base: '100%', '2xl': '40%' }}
+          direction="column"
+          justify="center"
+        >
           <Heading as="h2" fontWeight="bold" size="2xl" color="white" mb={5}>
             Welcome to your Dashboard
           </Heading>
@@ -59,9 +63,9 @@ const Welcome: React.FC = () => {
             tempus, non gravida turpis ultrices.
           </Text>
         </Flex>
-        <Flex direction="column" justify="space-between" align="center">
+        <Flex direction="column" justify="space-evenly" align="center">
           <Center>
-            <Image w="30vw" src={ClipArt} />
+            <Image w="80%" src={ClipArt} />
           </Center>
 
           <Flex mt={6} alignItems="center" gap="4">

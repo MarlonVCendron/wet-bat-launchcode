@@ -4,6 +4,7 @@ import { MapContainer, TileLayer, Marker, Tooltip } from 'react-leaflet';
 import L, { LatLngTuple } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
+import useForceUpdate from '../../../../utils/useForceUpdate';
 import MarkerIcon from '../../../../images/marker-icon.png';
 import Launchcode from '../../../../images/launchcode.png';
 
@@ -12,7 +13,7 @@ interface MapProps {
 }
 
 const Map: React.FC<MapProps> = ({ height }) => {
-  const forceUpdate: () => void = React.useState({})[1].bind(null, {});
+  const forceUpdate = useForceUpdate();
 
   const mapPosition: LatLngTuple = [50.96, -113.973];
   const icon = L.icon({
