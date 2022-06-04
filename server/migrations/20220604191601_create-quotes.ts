@@ -1,10 +1,9 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.up = (knex) => {
+import { Knex } from 'knex';
+
+export async function up(knex: Knex): Promise<void> {
+  await knex.schema.raw('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";');
   return knex.schema.createTable('quotes', (table) => {
-    table.uuid('id').primary().defaultTo(knex.raw('UUID()'));
+    table.uuid('id').primary().defaultTo(knex.raw('uuid_generate_v4()'));
     table.string('name');
     table.string('departure_loc');
     table.string('destination_loc');
@@ -12,12 +11,8 @@ exports.up = (knex) => {
     table.dateTime('return_date');
     table.integer('people');
   });
-};
+}
 
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.down = (knex) => {
+export async function down(knex: Knex): Promise<void> {
   return knex.schema.dropTable('quotes');
-};
+}

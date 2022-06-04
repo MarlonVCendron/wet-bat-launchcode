@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 import router from './routes';
+import knexconf from './knex';
 
 dotenv.config();
 
@@ -20,7 +21,7 @@ app.use(
 app.use('/', router);
 
 app.use((req: Request, res: Response) => {
-  res.status(404);
+  res.sendStatus(404);
 });
 
 app.listen(PORT, () => {
