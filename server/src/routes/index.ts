@@ -1,4 +1,4 @@
-import express, { Express, Request, Response } from 'express';
+import express from 'express';
 
 import quotesRouter from './quotesRouter';
 import statsRouter from './statsRouter';
