@@ -54,7 +54,13 @@ const Card: React.FC<CardProps> = ({
         )}
       </Flex>
       <Divider />
-      <Box p={p != null ? p : 4} overflowY="auto">
+      <Box
+        p={p != null ? p : 4}
+        overflowY="auto"
+        pos="relative"
+        height="full"
+        minH="100"
+      >
         {children}
       </Box>
     </Flex>

@@ -106,11 +106,11 @@ export const getCloseRatiosData = () => {
   const data = [
     {
       name: 'A',
-      value: 70,
+      value: 72,
     },
     {
       name: 'B',
-      value: 30,
+      value: 28,
     },
   ];
   return data;
