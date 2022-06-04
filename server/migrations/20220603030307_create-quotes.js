@@ -2,13 +2,15 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.up = function (knex) {
+exports.up = (knex) => {
   return knex.schema.createTable('quotes', (table) => {
-    table.increments();
+    table.uuid('id').primary().defaultTo(knex.raw('UUID()'));
+    table.string('name');
     table.string('departure_loc');
     table.string('destination_loc');
-    table.integer('number_passengers');
-    table.string('name');
+    table.dateTime('departure_date');
+    table.dateTime('return_date');
+    table.integer('people');
   });
 };
 
@@ -16,4 +18,6 @@ exports.up = function (knex) {
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.down = function (knex) {};
+exports.down = (knex) => {
+  return knex.schema.dropTable('quotes');
+};

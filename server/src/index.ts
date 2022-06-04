@@ -1,16 +1,15 @@
-import express from 'express';
+import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
+import dotenv from 'dotenv';
+
 import router from './routes';
 
-const PORT = process.env.PORT || 4000;
+dotenv.config();
 
+const PORT = process.env.PORT || 4000;
 const HOSTNAME = process.env.HOSTNAME || 'http://localhost';
 
-const app = express();
-
-app.get('/', (req, res) => {
-  res.send('Welcome!');
-});
+const app: Express = express();
 
 app.use(
   cors({
@@ -18,9 +17,9 @@ app.use(
   })
 );
 
-app.use('/api', router);
+app.use('/', router);
 
-app.use((req, res) => {
+app.use((req: Request, res: Response) => {
   res.status(404);
 });
 

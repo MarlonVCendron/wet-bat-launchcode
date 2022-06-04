@@ -1,13 +1,11 @@
-import express from 'express';
+import express, { Express, Request, Response } from 'express';
+
+import quotesRouter from './quotesRouter';
+import statsRouter from './statsRouter';
 
 const router = express.Router();
 
-router.post('/itens', (req, res) => {
-  res.send('post');
-});
-
-router.get('/itens', (req, res) => {
-  res.send('get');
-});
+quotesRouter(router);
+statsRouter(router);
 
 export default router;
