@@ -7,11 +7,12 @@ export async function seed(knex: Knex): Promise<void> {
   // Inserts seed entries
   await knex('quotes').insert([
     {
-      name: 'Marlon',
+      name: 'Name',
       departure_loc: 'Brazil',
       destination_loc: 'Canada',
       departure_date: '2022-06-03T22:17:10',
       return_date: '2024-06-03T22:17:10',
+      transportation: 'Plane',
       people: 1,
     },
   ]);

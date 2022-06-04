@@ -1,15 +1,5 @@
 import { makeAutoObservable, observable, action, runInAction } from 'mobx';
-import { fetchQuotes } from '../../services/quotesService';
-
-interface IQuote {
-  id: string;
-  name: string;
-  departure_loc: string;
-  destination_loc: string;
-  departure_date: Date;
-  return_date: Date;
-  people: number;
-}
+import { IQuote, fetchQuotes, postQuote } from '../../services/quotesService';
 
 interface IQuotesStore {
   quotes: Array<IQuote>;
@@ -45,6 +35,14 @@ export class QuotesStore implements IQuotesStore {
         this.loading = false;
         this.error = true;
       });
+    }
+  };
+
+  @action sendQuote = async (quote: IQuote) => {
+    try {
+      await postQuote(quote);
+    } catch (e) {
+      console.error(e);
     }
   };
 }

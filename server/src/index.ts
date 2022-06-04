@@ -11,6 +11,8 @@ const HOSTNAME = process.env.HOSTNAME || 'http://localhost';
 
 const app: Express = express();
 
+app.use(express.json());
+
 app.use(
   cors({
     origin: ['http://localhost:3000'],

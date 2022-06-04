@@ -8,5 +8,6 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-empty-function': 'warn',
     '@typescript-eslint/no-use-before-define': 'warn',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
 };

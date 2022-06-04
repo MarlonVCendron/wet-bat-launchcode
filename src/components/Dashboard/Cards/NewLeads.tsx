@@ -35,7 +35,7 @@ const newLeadsList: newLeadType[] = [
 
 const NewLeads: React.FC = () => {
   return (
-    <Card title="New leads" icon={MailOutlineIcon} reload expand>
+    <Card title="New leads" icon={MailOutlineIcon} onReload={() => {}} expand>
       {newLeadsList.map((lead, index) => (
         <Link
           key={index}

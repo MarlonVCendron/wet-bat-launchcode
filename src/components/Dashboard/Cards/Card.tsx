@@ -1,5 +1,13 @@
 import React from 'react';
-import { Box, Icon, Flex, Heading, Spacer, Divider } from '@chakra-ui/react';
+import {
+  Box,
+  Icon,
+  Flex,
+  Heading,
+  Spacer,
+  Divider,
+  IconButton,
+} from '@chakra-ui/react';
 import {
   OpenWith as OpenWithIcon,
   MoreVert as MoreVertIcon,
@@ -13,8 +21,8 @@ interface CardProps {
   p?: number;
   icon: OverridableComponent<SvgIconTypeMap>;
   expand?: boolean;
-  reload?: boolean;
   threeDots?: boolean;
+  onReload?: () => void;
   children?: React.ReactNode;
 }
 
@@ -23,8 +31,8 @@ const Card: React.FC<CardProps> = ({
   icon,
   p,
   expand,
-  reload,
   threeDots,
+  onReload,
   children,
 }) => {
   return (
@@ -43,14 +51,45 @@ const Card: React.FC<CardProps> = ({
           {title}
         </Heading>
         <Spacer />
-        {reload && (
-          <Icon ml="2" fontSize="32" color="gray.300" as={ReplayIcon} />
+        {!!onReload && (
+          <IconButton
+            aria-label="reload"
+            variant="link"
+            _focus={{ boxShadow: 'none' }}
+            onClick={onReload}
+            icon={
+              <Icon
+                ml="2"
+                fontSize="32"
+                color="gray.300"
+                as={ReplayIcon}
+                _hover={{ color: 'gray.500' }}
+                transition="color 0.2s"
+              />
+            }
+          />
         )}
         {expand && (
-          <Icon ml="2" fontSize="32" color="gray.300" as={OpenWithIcon} />
+          <IconButton
+            aria-label="expand"
+            variant="link"
+            _focus={{ boxShadow: 'none' }}
+            onClick={() => {}}
+            icon={
+              <Icon ml="2" fontSize="32" color="gray.300" as={OpenWithIcon} />
+            }
+          />
         )}
         {threeDots && (
-          <Icon ml="2" fontSize="32" color="gray.300" as={MoreVertIcon} />
+          <IconButton
+            aria-label="more"
+            variant="link"
+            _focus={{ boxShadow: 'none' }}
+            onClick={() => {}}
+            icon={
+              <Icon ml="2" fontSize="32" color="gray.300" as={MoreVertIcon} />
+            }
+          />
         )}
       </Flex>
       <Divider />

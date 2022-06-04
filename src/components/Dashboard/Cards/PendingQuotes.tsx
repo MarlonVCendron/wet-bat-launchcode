@@ -47,7 +47,12 @@ const PendingQuotes: React.FC = observer(() => {
   }, []);
 
   return (
-    <Card title="Pending quotes" icon={HistoryIcon} reload expand>
+    <Card
+      title="Pending quotes"
+      icon={HistoryIcon}
+      onReload={loadQuotes}
+      expand
+    >
       <Loader loading={loading}>
         {error ? (
           <Error text="Error loading quotes." />
@@ -57,7 +62,10 @@ const PendingQuotes: React.FC = observer(() => {
               title="Pending quotes"
               data={quotes}
               columns={columns}
-              elevation={0}
+              options={{
+                showTitle: false,
+                maxBodyHeight: '256px',
+              }}
             />
           </ThemeProvider>
         )}
