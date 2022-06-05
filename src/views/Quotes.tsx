@@ -30,9 +30,9 @@ const Quotes: React.FC = observer(() => {
     loadQuotes();
   }, []);
 
-  const handleDelete = () => {
+  const handleDelete = async () => {
     if (!quoteToDelete) return;
-    deleteQuoteAction(quoteToDelete);
+    await deleteQuoteAction(quoteToDelete);
     setQuoteToDelete(null);
     loadQuotes();
   };
