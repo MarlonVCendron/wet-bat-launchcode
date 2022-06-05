@@ -15,11 +15,11 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: ['http://localhost:3000'],
+    origin: ['https://wet-bat.xyz', 'http://localhost:3000'],
   })
 );
 
-app.use('/', router);
+app.use('', router);
 
 app.use((req: Request, res: Response) => {
   res.sendStatus(404);

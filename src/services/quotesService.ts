@@ -17,6 +17,7 @@ export const defaultQuote = {
   departure_date: '',
   people: 0,
   name: '',
+  transportation: '',
 };
 
 export const fetchQuotes = async () => {

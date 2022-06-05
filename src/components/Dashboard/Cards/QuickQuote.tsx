@@ -29,6 +29,7 @@ const QuickQuote: React.FC = () => {
         onSubmit={async (values: IQuote, actions) => {
           await sendQuote(values);
           actions.setSubmitting(false);
+          actions.resetForm();
           loadQuotes();
         }}
       >

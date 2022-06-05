@@ -2,7 +2,10 @@ import axios, { AxiosRequestConfig } from 'axios';
 
 const api = async () => {
   const client = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL:
+      process.env.NODE_ENV === 'development'
+        ? 'http://localhost:5000'
+        : 'https://wet-bat.xyz/api',
     headers: {
       'Content-type': 'application/json',
     },

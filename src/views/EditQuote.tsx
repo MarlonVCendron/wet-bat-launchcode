@@ -88,7 +88,7 @@ const EditQuote: React.FC = observer(() => {
                     {quoteFields.map((field, index) => (
                       <GridItem
                         rowSpan={1}
-                        colSpan={1}
+                        colSpan={{ base: 4, md: 2, lg: 1 }}
                         key={`input-${index}-${field.name}`}
                       >
                         <Field name={field.name}>

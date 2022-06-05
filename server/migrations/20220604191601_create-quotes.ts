@@ -9,7 +9,6 @@ export async function up(knex: Knex): Promise<void> {
     table.string('destination_loc');
     table.dateTime('departure_date');
     table.dateTime('return_date');
-    table.string('transportation');
     table.integer('people');
   });
 }

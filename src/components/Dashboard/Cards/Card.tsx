@@ -20,8 +20,8 @@ interface CardProps {
   title: string;
   p?: number;
   icon: OverridableComponent<SvgIconTypeMap>;
-  expand?: boolean;
   threeDots?: boolean;
+  onExpand?: () => void;
   onReload?: () => void;
   children?: React.ReactNode;
 }
@@ -30,8 +30,8 @@ const Card: React.FC<CardProps> = ({
   title,
   icon,
   p,
-  expand,
   threeDots,
+  onExpand,
   onReload,
   children,
 }) => {
@@ -69,14 +69,21 @@ const Card: React.FC<CardProps> = ({
             }
           />
         )}
-        {expand && (
+        {!!onExpand && (
           <IconButton
             aria-label="expand"
             variant="link"
             _focus={{ boxShadow: 'none' }}
-            onClick={() => {}}
+            onClick={onExpand}
             icon={
-              <Icon ml="2" fontSize="32" color="gray.300" as={OpenWithIcon} />
+              <Icon
+                ml="2"
+                fontSize="32"
+                color="gray.300"
+                as={OpenWithIcon}
+                _hover={{ color: 'gray.500' }}
+                transition="color 0.2s"
+              />
             }
           />
         )}

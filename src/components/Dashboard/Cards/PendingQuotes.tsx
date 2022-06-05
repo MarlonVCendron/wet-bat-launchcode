@@ -4,6 +4,7 @@ import { History as HistoryIcon } from '@mui/icons-material';
 import { observer } from 'mobx-react-lite';
 import { ThemeProvider, createTheme } from '@mui/material';
 import { Shadows } from '@mui/material/styles/shadows';
+import { useNavigate } from 'react-router-dom';
 
 import Card from './Card';
 import Loader from '../../Loader';
@@ -11,6 +12,7 @@ import Error from '../../Error';
 import { RootContext } from '../../../store/useStore';
 
 const PendingQuotes: React.FC = observer(() => {
+  const navigate = useNavigate();
   const materialTheme = createTheme({
     shadows: Array(25).fill('none') as Shadows,
   });
@@ -28,7 +30,7 @@ const PendingQuotes: React.FC = observer(() => {
       title="Pending quotes"
       icon={HistoryIcon}
       onReload={loadQuotes}
-      expand
+      onExpand={() => navigate('/quotes')}
     >
       <Loader loading={loading}>
         {error ? (
