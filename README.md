@@ -10,10 +10,10 @@ The backend is built with TypeScript and Express, it uses Objection ORM + Knex.j
 
 ## Summary
 
-- ### [Dependencies](#dependencies)
-- ### [Final Product](#final-product)
-- ### [Frontend](#frontend)
-- ### [Backend](#backend)
+- [Dependencies](#dependencies)
+- [Final Product](#final-product)
+- [Frontend](#frontend)
+- [Backend](#backend)
 
 ## Dependencies
 
