@@ -2,17 +2,21 @@ import React from 'react';
 import { Flex, Icon, Link, Text } from '@chakra-ui/react';
 import { SvgIconTypeMap } from '@mui/material';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
+import { Link as ReactRouterLink } from 'react-router-dom';
 
 interface NavItemProps {
-  href: string;
+  to: string;
   icon: OverridableComponent<SvgIconTypeMap>;
+  onClick: () => void;
   children: React.ReactNode;
 }
 
-const NavItem: React.FC<NavItemProps> = ({ href, icon, children }) => {
+const NavItem: React.FC<NavItemProps> = ({ to, icon, onClick, children }) => {
   return (
     <Link
-      href={href}
+      as={ReactRouterLink}
+      to={to}
+      onClick={onClick}
       style={{ textDecoration: 'none' }}
       _focus={{ boxShadow: 'none' }}
     >

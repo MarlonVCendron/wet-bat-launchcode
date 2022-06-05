@@ -10,29 +10,6 @@ import Loader from '../../Loader';
 import Error from '../../Error';
 import { RootContext } from '../../../store/useStore';
 
-const columns = [
-  {
-    title: 'NAME',
-    field: 'name',
-    type: 'string',
-  },
-  {
-    title: 'DESTINATION',
-    field: 'destination_loc',
-    type: 'string',
-  },
-  {
-    title: 'DEPARTURE DATE',
-    field: 'departure_date',
-    type: 'date',
-  },
-  {
-    title: 'PEOPLE',
-    field: 'people',
-    type: 'string',
-  },
-];
-
 const PendingQuotes: React.FC = observer(() => {
   const materialTheme = createTheme({
     shadows: Array(25).fill('none') as Shadows,
@@ -61,7 +38,28 @@ const PendingQuotes: React.FC = observer(() => {
             <MaterialTable
               title="Pending quotes"
               data={quotes}
-              columns={columns}
+              columns={[
+                {
+                  title: 'NAME',
+                  field: 'name',
+                  type: 'string',
+                },
+                {
+                  title: 'DESTINATION',
+                  field: 'destination_loc',
+                  type: 'string',
+                },
+                {
+                  title: 'DEPARTURE DATE',
+                  field: 'departure_date',
+                  type: 'date',
+                },
+                {
+                  title: 'PEOPLE',
+                  field: 'people',
+                  type: 'string',
+                },
+              ]}
               options={{
                 showTitle: false,
                 maxBodyHeight: '256px',

@@ -6,6 +6,7 @@ import {
   Settings as SettingsIcon,
   Dashboard as DashboardIcon,
 } from '@mui/icons-material';
+import { Link as ReactRouterLink } from 'react-router-dom';
 
 //import { MobileNavButton, MobileNavContent } from './mobile-nav'
 
@@ -28,7 +29,7 @@ const NavBar: React.FC<NavBarProps> = ({ height }) => {
       transition="box-shadow 0.2s, background-color 0.2s"
       pos="fixed"
       top="0"
-      zIndex="2000"
+      zIndex="1400"
       bg="primary"
       left="0"
       right="0"
@@ -44,15 +45,12 @@ const NavBar: React.FC<NavBarProps> = ({ height }) => {
         />
 
         <Flex align="center">
-          <Link href="/" _focus={{ boxShadow: 'none' }}>
+          <Link as={ReactRouterLink} to="/" _focus={{ boxShadow: 'none' }}>
             <Image
               mx={4}
-              src={BigLogo}
+              src={SmallLogo}
               alt="Wet Bat Travel"
               sx={{
-                '@media screen and (min-width: 0em)': {
-                  content: `url(${SmallLogo})`,
-                },
                 '@media screen and (min-width: 30em)': {
                   content: `url(${BigLogo})`,
                 },

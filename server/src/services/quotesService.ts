@@ -18,3 +18,7 @@ export const getQuotes = async () => {
 export const insertQuote = async (quote: IQuote) => {
   await QuoteModel.query().insert(quote);
 };
+
+export const deleteQuote = async (quoteId: string) => {
+  await QuoteModel.query().deleteById(quoteId);
+};

@@ -10,28 +10,7 @@ import {
 } from '@chakra-ui/react';
 
 import ClipArt from '../../images/clipart.png';
-
-const WelcomeNumber: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => (
-  <Heading
-    color="brand.400"
-    as="h1"
-    size="4xl"
-    fontWeight="bold"
-    textShadow="4px 4px 5px rgba(0,0,0,0.2)"
-  >
-    {children}
-  </Heading>
-);
-
-const WelcomeMetrics: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => (
-  <Heading color="white" as="h3" size="lg" textTransform="uppercase" ml={2}>
-    {children}
-  </Heading>
-);
+import Metrics from '../Metrics';
 
 const Welcome: React.FC = () => {
   return (
@@ -74,32 +53,23 @@ const Welcome: React.FC = () => {
             gap="4"
             direction={{ base: 'column', md: 'row' }}
           >
-            <Flex>
-              <WelcomeNumber>101</WelcomeNumber>
-              <WelcomeMetrics>
-                New
-                <br />
-                Leads
-              </WelcomeMetrics>
-            </Flex>
+            <Metrics value={10}>
+              New
+              <br />
+              Leads
+            </Metrics>
             <Spacer />
-            <Flex>
-              <WelcomeNumber>35</WelcomeNumber>
-              <WelcomeMetrics>
-                Quotes
-                <br />
-                Created
-              </WelcomeMetrics>
-            </Flex>
+            <Metrics value={74}>
+              Quotes
+              <br />
+              Created
+            </Metrics>
             <Spacer />
-            <Flex>
-              <WelcomeNumber>40</WelcomeNumber>
-              <WelcomeMetrics>
-                Pending
-                <br />
-                Orders
-              </WelcomeMetrics>
-            </Flex>
+            <Metrics value={40}>
+              Pending
+              <br />
+              Orders
+            </Metrics>
           </Flex>
         </Flex>
       </Flex>

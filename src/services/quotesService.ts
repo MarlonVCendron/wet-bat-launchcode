@@ -18,6 +18,10 @@ export const fetchQuotes = async () => {
 
 export const postQuote = async (quote: IQuote) => {
   const client = await api();
-  const { data } = await client.post('/quote', quote);
-  return data;
+  await client.post('/quote', quote);
+};
+
+export const deleteQuote = async (quote: IQuote) => {
+  const client = await api();
+  await client.delete(`/quote/${quote.id}`);
 };

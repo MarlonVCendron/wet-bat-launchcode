@@ -20,18 +20,21 @@ const SideBar: React.FC<SideBarProps> = observer(({ navBarHeight }) => {
       onClose={sideBarStore.close}
       isFullHeight={false}
     >
-      <DrawerContent>
+      <DrawerContent boxShadow="2px 0 2px 0 rgba(0, 0, 0, 0.2)">
         <Box
           bg="white"
           borderRight="1px"
           borderRightColor="gray.200"
           w="full"
           mt={navBarHeight}
-          boxShadow="2px 0 2px 0 rgba(0, 0, 0, 0.2)"
         >
           {items.map((item) => (
             <React.Fragment key={item.text}>
-              <NavItem href={item.href} icon={item.icon}>
+              <NavItem
+                to={item.to}
+                icon={item.icon}
+                onClick={sideBarStore.close}
+              >
                 {item.text}
               </NavItem>
               {item.divider && <Divider />}

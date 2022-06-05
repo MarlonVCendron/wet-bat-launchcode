@@ -12,7 +12,7 @@ const statsRouter = (router: Router) => {
       res.json(data);
     } catch (e) {
       console.error(e);
-      res.sendStatus(404);
+      res.sendStatus(400);
     }
   });
 
@@ -22,7 +22,7 @@ const statsRouter = (router: Router) => {
       res.json(data);
     } catch (e) {
       console.error(e);
-      res.sendStatus(404);
+      res.sendStatus(400);
     }
   });
 
@@ -32,7 +32,7 @@ const statsRouter = (router: Router) => {
       res.json(data);
     } catch (e) {
       console.error(e);
-      res.sendStatus(404);
+      res.sendStatus(400);
     }
   });
 };

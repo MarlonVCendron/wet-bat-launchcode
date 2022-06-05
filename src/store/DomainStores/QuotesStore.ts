@@ -1,5 +1,10 @@
 import { makeAutoObservable, observable, action, runInAction } from 'mobx';
-import { IQuote, fetchQuotes, postQuote } from '../../services/quotesService';
+import {
+  IQuote,
+  fetchQuotes,
+  postQuote,
+  deleteQuote,
+} from '../../services/quotesService';
 
 interface IQuotesStore {
   quotes: Array<IQuote>;
@@ -24,7 +29,7 @@ export class QuotesStore implements IQuotesStore {
       });
 
       const data = await fetchQuotes();
-      if (!data || !data?.length) throw new Error('No data');
+      if (!data) throw new Error('No data');
 
       runInAction(() => {
         this.quotes = data;
@@ -41,6 +46,14 @@ export class QuotesStore implements IQuotesStore {
   @action sendQuote = async (quote: IQuote) => {
     try {
       await postQuote(quote);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  @action deleteQuoteAction = async (quote: IQuote) => {
+    try {
+      await deleteQuote(quote);
     } catch (e) {
       console.error(e);
     }

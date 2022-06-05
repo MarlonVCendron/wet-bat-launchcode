@@ -15,7 +15,7 @@ import { OverridableComponent } from '@mui/material/OverridableComponent';
 interface itemsLayout {
   text: string;
   icon: OverridableComponent<SvgIconTypeMap>;
-  href: string;
+  to: string;
   divider: boolean;
 }
 
@@ -23,55 +23,55 @@ const items: itemsLayout[] = [
   {
     text: 'Home',
     icon: Home,
-    href: '/',
+    to: '/',
     divider: false,
   },
   {
     text: 'Quotes',
     icon: AttachMoney,
-    href: '/',
+    to: '/quotes',
     divider: false,
   },
   {
     text: 'Leads',
     icon: ListAlt,
-    href: '/',
+    to: '/',
     divider: false,
   },
   {
     text: 'Tours',
     icon: Telegram,
-    href: '/',
+    to: '/',
     divider: true,
   },
   {
     text: 'Invoices',
     icon: InsertDriveFile,
-    href: '/',
+    to: '/',
     divider: false,
   },
   {
     text: 'Analytics',
     icon: Timeline,
-    href: '/',
+    to: '/',
     divider: false,
   },
   {
     text: 'Team',
     icon: Group,
-    href: '/',
+    to: '/',
     divider: false,
   },
   {
     text: 'Admin',
     icon: Settings,
-    href: '/',
+    to: '/',
     divider: false,
   },
   {
     text: 'Support',
     icon: Support,
-    href: '/',
+    to: '/',
     divider: false,
   },
 ];
