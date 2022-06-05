@@ -5,6 +5,7 @@ import { observer } from 'mobx-react-lite';
 import { ThemeProvider, createTheme } from '@mui/material';
 import { Shadows } from '@mui/material/styles/shadows';
 import { Icon, Box, Center, Flex, Heading } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 import Loader from '../components/Loader';
 import Error from '../components/Error';
@@ -16,6 +17,7 @@ import ModalDelete from '../components/ModalDelete';
 
 const Quotes: React.FC = observer(() => {
   const [quoteToDelete, setQuoteToDelete] = useState<IQuote | null>(null);
+  const navigate = useNavigate();
   const materialTheme = createTheme({
     shadows: Array(25).fill('none') as Shadows,
   });
@@ -28,8 +30,8 @@ const Quotes: React.FC = observer(() => {
     loadQuotes();
   }, []);
 
-  const handleEdit = (e, quote: IQuote) => {
-    return;
+  const handleEdit = (_, quote: IQuote) => {
+    navigate(`/quote/${quote.id}`);
   };
 
   const openModalDelete = (e, quote: IQuote) => {

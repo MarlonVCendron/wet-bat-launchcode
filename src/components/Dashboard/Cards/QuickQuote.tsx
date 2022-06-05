@@ -15,48 +15,11 @@ import { Field, Form, Formik, FormikProps } from 'formik';
 import Card from './Card';
 import { RootContext } from '../../../store/useStore';
 import { IQuote } from '../../../services/quotesService';
-
-const fields = [
-  {
-    label: 'From',
-    name: 'departure_loc',
-    type: 'text',
-  },
-  {
-    label: 'Destination',
-    name: 'destination_loc',
-    type: 'text',
-  },
-  {
-    label: 'Departure  date',
-    name: 'departure_date',
-    type: 'date',
-  },
-  {
-    label: 'Return date',
-    name: 'return_date',
-    type: 'date',
-  },
-  {
-    label: 'People',
-    name: 'people',
-    type: 'number',
-  },
-  {
-    label: 'Transportation',
-    name: 'transportation',
-    type: 'text',
-  },
-  {
-    label: 'Name',
-    name: 'name',
-    type: 'text',
-  },
-];
+import quoteFields from '../../../utils/quoteFields';
 
 const QuickQuote: React.FC = () => {
   const {
-    quotesStore: { sendQuote },
+    quotesStore: { sendQuote, loadQuotes },
   } = useContext(RootContext);
 
   return (
@@ -73,6 +36,7 @@ const QuickQuote: React.FC = () => {
         onSubmit={async (values: IQuote, actions) => {
           await sendQuote(values);
           actions.setSubmitting(false);
+          loadQuotes();
         }}
       >
         {(props: FormikProps<any>) => (
@@ -84,7 +48,7 @@ const QuickQuote: React.FC = () => {
               width="full"
               height="full"
             >
-              {fields.map((field, index) => (
+              {quoteFields.map((field, index) => (
                 <GridItem
                   rowSpan={1}
                   colSpan={1}
@@ -120,7 +84,7 @@ const QuickQuote: React.FC = () => {
                   size="lg"
                   w="full"
                   h="full"
-                  borderRadius="50"
+                  borderRadius="full"
                   isLoading={props.isSubmitting}
                   type="submit"
                   _hover={{ bg: '#389f9b' }}

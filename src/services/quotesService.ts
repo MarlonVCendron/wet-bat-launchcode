@@ -16,9 +16,20 @@ export const fetchQuotes = async () => {
   return data;
 };
 
+export const fetchQuote = async (quoteId: string) => {
+  const client = await api();
+  const { data } = await client.get(`/quote/${quoteId}`);
+  return data;
+};
+
 export const postQuote = async (quote: IQuote) => {
   const client = await api();
   await client.post('/quote', quote);
+};
+
+export const updateQuote = async (quote: IQuote) => {
+  const client = await api();
+  await client.put('/quote', quote);
 };
 
 export const deleteQuote = async (quote: IQuote) => {

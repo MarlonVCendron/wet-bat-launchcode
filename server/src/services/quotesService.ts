@@ -11,8 +11,11 @@ export interface IQuote {
 }
 
 export const getQuotes = async () => {
-  const data = await QuoteModel.query();
-  return data;
+  return await QuoteModel.query();
+};
+
+export const getQuote = async (quoteId: string) => {
+  return await QuoteModel.query().findById(quoteId);
 };
 
 export const insertQuote = async (quote: IQuote) => {
@@ -21,4 +24,9 @@ export const insertQuote = async (quote: IQuote) => {
 
 export const deleteQuote = async (quoteId: string) => {
   await QuoteModel.query().deleteById(quoteId);
+};
+
+export const updateQuote = async (quote: IQuote) => {
+  if (!quote.id) throw new Error('Missing ID to update');
+  return await QuoteModel.query().findById(quote.id).patch(quote);
 };

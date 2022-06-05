@@ -29,7 +29,7 @@ const NavBar: React.FC<NavBarProps> = ({ height }) => {
       transition="box-shadow 0.2s, background-color 0.2s"
       pos="fixed"
       top="0"
-      zIndex="1400"
+      zIndex="1700"
       bg="primary"
       left="0"
       right="0"

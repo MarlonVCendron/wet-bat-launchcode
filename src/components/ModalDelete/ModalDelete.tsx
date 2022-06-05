@@ -27,7 +27,7 @@ const ModalDelete: React.FC<ModalDeleteProps> = ({
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent sx={{ top: '100px' }}>
         <ModalHeader>Delete {text}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
