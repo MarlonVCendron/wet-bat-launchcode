@@ -40,6 +40,12 @@ const PendingQuotes: React.FC = observer(() => {
               data={quotes}
               columns={[
                 {
+                  title: 'ID',
+                  field: 'id',
+                  type: 'string',
+                  hidden: true,
+                },
+                {
                   title: 'NAME',
                   field: 'name',
                   type: 'string',

@@ -30,14 +30,6 @@ const Quotes: React.FC = observer(() => {
     loadQuotes();
   }, []);
 
-  const handleEdit = (_, quote: IQuote) => {
-    navigate(`/quote/${quote.id}`);
-  };
-
-  const openModalDelete = (e, quote: IQuote) => {
-    setQuoteToDelete(quote);
-  };
-
   const handleDelete = () => {
     if (!quoteToDelete) return;
     deleteQuoteAction(quoteToDelete);
@@ -130,12 +122,12 @@ const Quotes: React.FC = observer(() => {
                     {
                       icon: () => <Icon color="gray" as={EditIcon} />,
                       tooltip: 'Edit quote',
-                      onClick: handleEdit,
+                      onClick: (event, quote) => navigate(`/quote/${quote.id}`),
                     },
                     {
                       icon: () => <Icon color="#c53030" as={DeleteIcon} />,
                       tooltip: 'Delete quote',
-                      onClick: openModalDelete,
+                      onClick: (event, quote) => setQuoteToDelete(quote),
                     },
                   ]}
                   options={{

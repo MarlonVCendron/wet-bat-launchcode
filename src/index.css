@@ -1,9 +1,12 @@
-@import-normalize;
-
-html {
-  overflow-y: scroll;
-}
-
-body {
-  margin: 0;
+/* Important because the Chakra UI Drawer messes up with the layout */
+html > body {
+  overflow: initial !important;
+  overscroll-behavior: initial !important;
+  position: relative !important;
+  padding-left: initial !important;
+  padding-top: initial !important;
+  padding-right: initial !important;
+  margin-left: initial !important;
+  margin-top: initial !important;
+  margin-right: initial !important;
 }

@@ -14,7 +14,7 @@ import { Field, Form, Formik, FormikProps } from 'formik';
 
 import Card from './Card';
 import { RootContext } from '../../../store/useStore';
-import { IQuote } from '../../../services/quotesService';
+import { defaultQuote, IQuote } from '../../../services/quotesService';
 import quoteFields from '../../../utils/quoteFields';
 
 const QuickQuote: React.FC = () => {
@@ -25,14 +25,7 @@ const QuickQuote: React.FC = () => {
   return (
     <Card title="Quick quote" icon={FastForwardIcon} expand>
       <Formik
-        initialValues={{
-          departure_loc: '',
-          destination_loc: '',
-          return_date: new Date(),
-          departure_date: new Date(),
-          people: 0,
-          name: '',
-        }}
+        initialValues={defaultQuote}
         onSubmit={async (values: IQuote, actions) => {
           await sendQuote(values);
           actions.setSubmitting(false);

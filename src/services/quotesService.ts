@@ -5,10 +5,19 @@ export interface IQuote {
   name: string;
   departure_loc: string;
   destination_loc: string;
-  departure_date: Date;
-  return_date: Date;
+  departure_date: string;
+  return_date: string;
   people: number;
 }
+
+export const defaultQuote = {
+  departure_loc: '',
+  destination_loc: '',
+  return_date: '',
+  departure_date: '',
+  people: 0,
+  name: '',
+};
 
 export const fetchQuotes = async () => {
   const client = await api();

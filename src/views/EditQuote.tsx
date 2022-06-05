@@ -15,13 +15,14 @@ import {
 import { Field, Form, Formik, FormikProps } from 'formik';
 import { toast } from 'react-toastify';
 import { useNavigate, useParams } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
+import moment from 'moment';
 
 import DefaultLayout from '../layouts/Default';
 import { RootContext } from '../store/useStore';
-import { IQuote } from '../services/quotesService';
+import { defaultQuote, IQuote } from '../services/quotesService';
 import quoteFields from '../utils/quoteFields';
 import Loader from '../components/Loader';
-import { observer } from 'mobx-react-lite';
 
 const EditQuote: React.FC = observer(() => {
   const navigate = useNavigate();
@@ -47,6 +48,15 @@ const EditQuote: React.FC = observer(() => {
     }
   }, [error]);
 
+  const prepareInitialValues = () => {
+    if (!editQuote) return defaultQuote;
+    return {
+      ...editQuote,
+      return_date: moment(editQuote.return_date).format('yyyy-MM-DD'),
+      departure_date: moment(editQuote.departure_date).format('yyyy-MM-DD'),
+    };
+  };
+
   return (
     <DefaultLayout>
       <Box p="5" h="full">
@@ -59,16 +69,7 @@ const EditQuote: React.FC = observer(() => {
         <Box p="5" minH="400px">
           <Loader loading={loading}>
             <Formik
-              initialValues={
-                editQuote || {
-                  departure_loc: '',
-                  destination_loc: '',
-                  return_date: new Date(),
-                  departure_date: new Date(),
-                  people: 0,
-                  name: '',
-                }
-              }
+              initialValues={prepareInitialValues()}
               onSubmit={async (values: IQuote, actions) => {
                 await updateQuoteAction({ ...values, id: editQuote?.id });
                 actions.setSubmitting(false);

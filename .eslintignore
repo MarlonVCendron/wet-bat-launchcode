@@ -1,5 +1,5 @@
 /build
-/server
+/server/dist
 /public
 /node_modules
 
