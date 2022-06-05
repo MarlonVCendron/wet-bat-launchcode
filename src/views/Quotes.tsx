@@ -53,6 +53,8 @@ const Quotes: React.FC = observer(() => {
           py="4"
           borderRadius={12}
           justify="space-between"
+          align="center"
+          direction={{ base: 'column', md: 'row' }}
         >
           <Heading as="h1" size="4xl" noOfLines={1} color="white" py="4">
             Quotes
